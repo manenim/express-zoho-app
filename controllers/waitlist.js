@@ -37,7 +37,7 @@ export const addProspect = async (req, res) => {
     const match = await bcrypt.compare(email, hashedEmail);
     console.log(match)
 
-    res.status(200).json({ message: 'sending your accesstoken' })
+    // res.status(200).json({ message: 'sending your accesstoken' })
     
     
     // const data = await axios.post('https://accounts.zoho.com/oauth/v2/token?client_id=1000.7CAW02T2H0JPSC5ZRJHVLV9DPBX4ZT&grant_type=refresh_token&client_secret=51ca70b87951da92d8d632458db19e71d4c92ce321&refresh_token=1000.54ba6ad132159765fb73d78172dda143.35a4bd27181afcf571c789254405cf61')
@@ -83,7 +83,7 @@ export const addProspect = async (req, res) => {
 
 axios.post(url, param, config)
   .then(response => {
-    res.status(200).send(response.data);
+    return res.status(200).json( response.data );
   })
   .catch(error => {
     console.log(error);
