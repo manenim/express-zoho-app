@@ -7,7 +7,7 @@ const MONGO_PASSWORD = process.env.MONGO_PASSWORD || '';
 const MONGO_URL = `mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}@cluster0.uwuvnh5.mongodb.net/?retryWrites=true&w=majority`; 
 
 
-const SERVER_PORT = process.env.SERVER_PORT ? Number( process.env.SERVER_PORT ) : 1337;
+const SERVER_PORT = process.env.PORT || Number( process.env.SERVER_PORT );
 
 export const config = {
      mongo: {
