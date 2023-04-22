@@ -83,7 +83,7 @@ export const addProspect = async (req, res) => {
 
 axios.post(url, param, config)
   .then(response => {
-    console.log(response.data);
+    res.status(200).send(response.data);
   })
   .catch(error => {
     console.log(error);
